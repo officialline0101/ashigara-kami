@@ -1184,7 +1184,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbwCxnJaxGZ46c3TnnesuZcD_zuxuVoSHoDHo5MxkRzChcK5vZDwBs4HstzkXO-KLyuDYA/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbwvns4xTFwt-M_IO2RKaX2hfd7lQolFKNrd4cAs5UgKPkQL-_FI5C-la2KPB9atnW9KMw/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
@@ -1353,11 +1353,6 @@
                     }
                     // 営業日で、指定されている時間以外の時間は×
                     else if (businessEventTimes.length > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    }
-                    // 日曜日で、営業日ではない場合
-                    else if (slotStart.getDay() === 0 && !isBusinessDay && businessEventTimes.length === 0) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                     }
